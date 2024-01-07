@@ -1,0 +1,133 @@
+﻿<Window x:Class="WORKSHOP.Warehouse.WarehouseList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WORKSHOP.Warehouse"
+        mc:Ignorable="d"
+        Title="Склад"
+        Height="450" 
+        Width="700"
+        Background="#00adef"
+        WindowStartupLocation="CenterScreen" 
+        WindowState="Normal" 
+        ResizeMode="NoResize">
+
+    <Grid ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2.5*"></ColumnDefinition>
+            <ColumnDefinition Width="2.5*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid Grid.Row="0"
+                  Grid.ColumnSpan="4"
+                  x:Name="Product_DG" 
+                  IsReadOnly="True" 
+                  Width="320"
+                  HorizontalAlignment="Right"
+                  AutoGenerateColumns="False"
+                  CanUserResizeColumns="True"
+                  CanUserResizeRows="False"
+                  CanUserReorderColumns="False">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="pID" Binding="{Binding p_id}" Width="auto"></DataGridTextColumn>
+                <DataGridTextColumn Header="Name" Binding="{Binding p_name}" Width="auto"></DataGridTextColumn>
+                <DataGridTextColumn Header="Action" Binding="{Binding w_action}" Width="auto"></DataGridTextColumn>
+                <DataGridTextColumn Header="Time" Binding="{Binding w_time}" Width="auto"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid Grid.Row="0"
+                  Grid.ColumnSpan="2"
+                  x:Name="Supply_DG" 
+                  IsReadOnly="True" 
+                  Width="360"
+                  HorizontalAlignment="Left"
+                  AutoGenerateColumns="False"
+                  CanUserResizeColumns="True"
+                  CanUserResizeRows="False"
+                  CanUserReorderColumns="False">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="spID" Binding="{Binding sp_id}" Width="auto"></DataGridTextColumn>
+                <DataGridTextColumn Header="Name" Binding="{Binding sp_item}" Width="auto"></DataGridTextColumn>
+                <DataGridTextColumn Header="Date" Binding="{Binding sp_date}" Width="auto"></DataGridTextColumn>
+                <DataGridTextColumn Header="Total" Binding="{Binding sp_total}" Width="auto"></DataGridTextColumn>
+                <DataGridTextColumn Header="sID" Binding="{Binding s_id}" Width="auto"></DataGridTextColumn>
+                <DataGridTextColumn Header="Action" Binding="{Binding w_action}" Width="auto"></DataGridTextColumn>
+                <DataGridTextColumn Header="Time" Binding="{Binding w_time}" Width="auto"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Grid.Row="1"
+                Grid.Column="0"
+                Content="Закупить"
+                Foreground="Black" 
+                Background="White"
+                FontFamily="EB Garamond" 
+                FontSize="35" 
+                Width="220"
+                BorderThickness="3"
+                BorderBrush="Black"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center"
+                VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center"
+                Click="Button_Supply"/>
+
+        <Button Grid.Row="1"
+                Grid.Column="1"
+                Content="Удалить"
+                Foreground="Black" 
+                Background="White"
+                FontFamily="EB Garamond" 
+                FontSize="35" 
+                Width="220"
+                BorderThickness="3"
+                BorderBrush="Black"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center"
+                VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center"
+                Click="Button_Delete"/>
+
+        <Button Grid.Row="1"
+                Grid.Column="2"
+                Content="..."
+                Foreground="Black" 
+                Background="White"
+                FontFamily="EB Garamond" 
+                FontSize="35" 
+                Width="80"
+                BorderThickness="3"
+                BorderBrush="Black"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center"
+                VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center"
+                Click="Button_Supplier"/>
+
+        <Button Grid.Row="1"
+                Grid.Column="3"
+                Content="→"
+                Foreground="Black" 
+                Background="White"
+                FontFamily="EB Garamond" 
+                FontSize="35" 
+                Width="80"
+                BorderThickness="3"
+                BorderBrush="Black"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center"
+                VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center"
+                Click="Button_Close"/>
+    </Grid>
+</Window>

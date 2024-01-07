@@ -1,0 +1,119 @@
+DROP SCHEMA public CASCADE;
+CREATE SCHEMA public;
+
+
+CREATE OR REPLACE FUNCTION supply_trigger() RETURNS TRIGGER AS $$
+BEGIN
+IF TG_OP = 'INSERT' THEN
+INSERT INTO public."Warehouse" (sp_id, w_action)
+VALUES (NEW.sp_id, 'INSERT');
+RETURN NEW;
+
+ELSIF TG_OP = 'UPDATE' THEN
+INSERT INTO public."Warehouse" (sp_id, w_action)
+VALUES (NEW.sp_id, 'UPDATE');
+RETURN NEW;
+
+ELSIF TG_OP = 'DELETE' THEN
+INSERT INTO public."Warehouse" (sp_id, w_action)
+VALUES (NEW.sp_id, 'DELETE');
+RETURN NEW;
+
+END IF;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION product_trigger() RETURNS TRIGGER AS $$
+BEGIN
+IF TG_OP = 'INSERT' THEN
+INSERT INTO public."Warehouse" (p_id, w_action)
+VALUES (NEW.p_id, 'INSERT');
+RETURN NEW;
+
+ELSIF TG_OP = 'UPDATE' THEN
+INSERT INTO public."Warehouse" (p_id, w_action)
+VALUES (NEW.p_id, 'UPDATE');
+RETURN NEW;
+
+ELSIF TG_OP = 'DELETE' THEN
+INSERT INTO public."Warehouse" (p_id, w_action)
+VALUES (NEW.p_id, 'DELETE');
+RETURN NEW;
+
+END IF;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER supply_trigger
+AFTER INSERT OR UPDATE OR DELETE ON public."Supply"
+FOR EACH ROW
+EXECUTE FUNCTION supply_trigger();
+
+CREATE TRIGGER product_trigger
+AFTER INSERT OR UPDATE OR DELETE ON public."Product"
+FOR EACH ROW
+EXECUTE FUNCTION product_trigger();
+
+
+INSERT INTO public."Product" (p_brand, p_name, p_description, p_price, p_category) 
+VALUES 
+('Priscilla Custom Effects', 'TS-S', 'Overdrive', 11800, 'Custom Effects'),
+('Priscilla Custom Effects', 'PRISCILLA', 'Overdrive-Distortion', 15200, 'Custom Effects'),
+('Priscilla Custom Effects', 'M', 'Modern Overdrive', 14200, 'Custom Effects'),
+('Priscilla Custom Effects', 'H&B', 'Booster', 3800, 'Custom Effects'),
+('Priscilla Custom Effects', 'OD-3 TK mod', 'Именная модель Toru Kitajima', 4800, 'Mods'),
+('Priscilla Custom Effects', 'BD-2 TK mod', 'Именная модель Toru Kitajima', 3800, 'Mods'),
+('Priscilla Custom Effects', 'SPH-1 SPI mod', 'Именная модель Toru Kitajima', 4800, 'Mods'),
+('Priscilla Custom Effects', 'SPH-1 WAXX mod', 'Именная модель Toru Kitajima', 4800, 'Mods'),
+('Priscilla Custom Effects', 'LS-2 TK mod', 'Именная модель Toru Kitajima', 2800, 'Mods');
+
+INSERT INTO public."Client" (c_fio, c_city, c_address, c_phone) 
+VALUES 
+('Akira', 'Tokyo', 'far away', '+79876543210'), 
+('couscousdude', 'Tokyo', 'far away', '+79876543210'),
+('Fu re te fu re ru', 'Tokyo', 'far away', '+79876543210'),
+('roshiajinn', 'Tokyo', 'far away', '+79876543210'),
+('aF', 'Tokyo', 'far away', '+79876543210'),
+('mc', 'Tokyo', 'far away', '+79876543210'),
+('fussedsyko', 'Tokyo', 'far away', '+79876543210'),
+('nsn', 'Tokyo', 'far away', '+79876543210'),
+('Futti Peace', 'Tokyo', 'far away', '+79876543210'),
+('霪島時雨', 'Tokyo', 'far away', '+79876543210'),
+('abnormaltrick', 'Tokyo', 'far away', '+79876543210'),
+('技craft enjoyer', 'Tokyo', 'far away', '+79876543210'),
+('TYの時雨', 'Tokyo', 'far away', '+79876543210'),
+('Toru Kitajima', 'Tokyo', 'far away', '+79876543210'),
+('345', 'Tokyo', 'far away', '+79876543210'),
+('Pierre Nakano', 'Tokyo', 'far away', '+79876543210'), 
+('Shutoku Mukai', 'Tokyo', 'far away', '+79876543210');
+
+INSERT INTO public."Order" (c_id, p_id, o_date) 
+VALUES 
+(1, 1, '24-05-2023'),
+(2, 2, '24-05-2023'),
+(3, 3, '24-05-2023'),
+(4, 4, '24-05-2023'),
+(5, 5, '24-05-2023'),
+(6, 6, '24-05-2023'),
+(7, 7, '24-05-2023'),
+(8, 8, '24-05-2023'),
+(9, 9, '24-05-2023');
+
+INSERT INTO public."Supplier" (s_name, s_site, s_description) 
+VALUES 
+('Автограф', 'https://avtograf72.ru', 'Типография'),
+('chipdip.', 'https://www.chipdip.ru', 'Электрокомплектующие'),
+('DIY-TUBES', 'http://diy-tubes.ru', 'Электрокомплектующие'),
+('Mouser', 'https://ru.mouser.com', 'Электрокомплектующие'),
+('Унисервис', 'https://uniservice.msk.ru', 'Электрокомплектующие');
+
+INSERT INTO public."Supply" (sp_item, sp_date, sp_total, s_id) 
+VALUES 
+('Наклейка', '24-05-2023', 1400, 1),
+('Резистор', '24-05-2023', 1500, 2),
+('Кондесатор', '24-05-2023', 3600, 3),
+('Потенциометр', '24-05-2023', 1200, 4),
+('Макетная плата', '24-05-2023', 800, 5);
+
+
+

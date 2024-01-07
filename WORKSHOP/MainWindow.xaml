@@ -1,0 +1,146 @@
+﻿<Window x:Class="WORKSHOP.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WORKSHOP"
+        mc:Ignorable="d"
+        Title="Мастерская Аудио-оборудования: Priscilla Custom Effects" 
+        Height="450" 
+        Width="800"
+        Background="#00adef"
+        WindowStartupLocation="CenterScreen" 
+        WindowState="Normal" 
+        ResizeMode="NoResize">
+    
+    <Grid ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0"
+               Grid.ColumnSpan="3"
+               Content="PRISCILLA CUSTOM EFFECTS" 
+               Foreground="White" 
+               FontFamily="EB Garamond" 
+               FontSize="55" 
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Center"
+               VerticalContentAlignment="Center" 
+               HorizontalContentAlignment="Center"
+               Margin="0 30 0 0">
+            <Label.BitmapEffect>
+            <DropShadowBitmapEffect Color="Black" Direction="320" ShadowDepth="10" Opacity="1" Softness="9"/>
+            </Label.BitmapEffect>
+        </Label>
+
+        <Button Grid.Row="1"
+                Grid.Column="1"
+                Content="ЗАКАЗЫ"
+                Foreground="black" 
+                Background="white"
+                FontFamily="EB Garamond" 
+                FontSize="28" 
+                Width="220"
+                Height="60"
+                BorderThickness="3"
+                BorderBrush="Black"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center"
+                VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center" 
+                Click="Button_Order"/>
+
+        <Button Grid.Row="1"
+                Grid.Column="0"
+                Content="СКЛАД"
+                Foreground="black" 
+                Background="white"
+                FontFamily="EB Garamond" 
+                FontSize="28" 
+                Width="220"
+                Height="60"
+                BorderThickness="3"
+                BorderBrush="Black"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center"
+                VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center"
+                Click="Button_Warehouse"/>
+
+        <Button Grid.Row="1"
+                Grid.Column="2"
+                Content="ПРОДУКТЫ"
+                Foreground="black" 
+                Background="white"
+                FontFamily="EB Garamond"  
+                FontSize="28" 
+                Width="220"
+                Height="60"
+                BorderThickness="3"
+                BorderBrush="Black"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center"
+                VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center"
+                Click="Button_Product"/>
+
+        <Button Grid.Row="2"
+                Grid.Column="1"
+                Content="КЛИЕНТЫ"
+                Foreground="black" 
+                Background="white"
+                FontFamily="EB Garamond"  
+                FontSize="28" 
+                Width="220"
+                Height="60"
+                BorderThickness="3"
+                BorderBrush="Black"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top"
+                VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center"
+                Click="Button_Clients"/>
+
+        <Button Grid.Row="2"
+                Grid.Column="0"
+                Content="ПОСТАВЩИКИ"
+                Foreground="black" 
+                Background="white"
+                FontFamily="EB Garamond"  
+                FontSize="28" 
+                Width="220"
+                Height="60"
+                BorderThickness="3"
+                BorderBrush="Black"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top"
+                VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center"
+                Click="Button_Supplier"/>
+
+        <Button Grid.Row="2"
+                Grid.Column="2"
+                Content="О ПРОГРАММЕ"
+                Foreground="black" 
+                Background="white"
+                FontFamily="EB Garamond"  
+                FontSize="28" 
+                Width="220"
+                Height="60"
+                BorderThickness="3"
+                BorderBrush="Black"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top"
+                VerticalContentAlignment="Center" 
+                HorizontalContentAlignment="Center"
+                Click="Button_About"/>
+    </Grid>
+</Window>
