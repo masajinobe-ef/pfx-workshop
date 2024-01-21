@@ -21,4 +21,4 @@ git clone https://github.com/masajinobe-ef/pfx-workshop
 
 ## License
 
-This project is licensed under the GNU General Public License v3.0.
+This project is licensed under the GPL-3.0 license.
