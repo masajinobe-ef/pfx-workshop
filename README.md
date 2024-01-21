@@ -1,4 +1,4 @@
-# PostgreSQL Management Program with .NET-7
+# 🌊PostgreSQL Management Program with .NET-7
 
 ![pic](pic.png)
 
