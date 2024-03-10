@@ -1,9 +1,9 @@
 ﻿<Application x:Class="WORKSHOP.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:WORKSHOP"
-             StartupUri="MainWindow.xaml">
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:WORKSHOP" StartupUri="Auth.xaml">
+
     <Application.Resources>
-        <FontFamily x:Key="EB Garamond">./Fonts/EBGaramond.ttf</FontFamily>
+
     </Application.Resources>
 </Application>

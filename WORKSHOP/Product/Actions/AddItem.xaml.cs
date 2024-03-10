@@ -21,9 +21,9 @@ namespace WORKSHOP
         {
             try
             {
-                if (!(string.IsNullOrEmpty(brand.Text) 
-                    || string.IsNullOrEmpty(name.Text) 
-                    || string.IsNullOrEmpty(description.Text) 
+                if (!(string.IsNullOrEmpty(brand.Text)
+                    || string.IsNullOrEmpty(name.Text)
+                    || string.IsNullOrEmpty(description.Text)
                     || string.IsNullOrEmpty(price.Text)
                     || string.IsNullOrEmpty(category.Text)))
                 {

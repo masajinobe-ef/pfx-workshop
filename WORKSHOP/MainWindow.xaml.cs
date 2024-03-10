@@ -47,7 +47,7 @@ namespace WORKSHOP
 
         private void Button_About(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Pedals and mods are handmade\r\nby Priscilla Custom Effects in Russia.\n・Instagram: instagram.com/masajinobe\n・Twitter: twitter.com/priscilla_eF\nGitHub: https://github.com/priscilla-effects/WORKSHOP-.NET-7\n©Priscilla Fx", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Pedals and mods are handmade\r\nby Priscilla Custom Effects in Russia.\nGitHub: https://github.com/masajinobe-ef/pfx-workshop\n©Priscilla Fx", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

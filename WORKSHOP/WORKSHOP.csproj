@@ -9,10 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Fonts\EBGaramond.ttf" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="favicon.ico" />
   </ItemGroup>
 
@@ -21,9 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Fonts\EBGaramond.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
+    <Resource Include="Fonts\EBGaramond.ttf" />
   </ItemGroup>
 
 </Project>
